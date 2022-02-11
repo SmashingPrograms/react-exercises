@@ -28,11 +28,11 @@ function App() {
           </li>
         </ul>
       </nav>
-      {filter === "a" && <BlogList />}
-      {filter === "b" && <BlogForm />}
+      {filter === "a" && <BlogForm />}
+      {filter === "b" && <ContactForm />}
       {filter === "c" && <BlogReadingApp />}
       {filter === "d" && <BookmarkingApp />}
-      {filter === "e" && <ContactForm />}
+      {filter === "e" && <BlogList />}
     </div>
   );
 };
