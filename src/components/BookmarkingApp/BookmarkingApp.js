@@ -8,6 +8,7 @@ function BookmarkingApp() {
   const [bookmarkLink, setBookmarkLink] = useState('');
   const [bookmarkTag, setBookmarkTag] = useState('');
   const [bookmarkTags, setBookmarkTags] = useState(['All tags']);
+  const [tagState, setTagState] = useState('Loo')
   // setBookmark([1, 2])
 
   const tags = [];
@@ -57,7 +58,7 @@ function BookmarkingApp() {
           <label htmlFor="body">Tag: </label>
           <input type="text" id="body" name="body" onChange={handleTagInput} value={bookmarkTag} required />
         </div>
-        <button type="submit" onClick={handleSubmit}>Link</button>
+        <button type="submit" onClick={handleSubmit}>Post</button>
       </form>
       <ul className="bookmarkTags">
         Tags:
@@ -70,6 +71,8 @@ function BookmarkingApp() {
         }
       </ul>
         {
+          (tagState === 'All tags')
+          ?
           bookmark.map(i => (
             <>
               <ul>
@@ -83,6 +86,24 @@ function BookmarkingApp() {
               <hr />
             </>
           ))
+          :
+          bookmark.map(i => {
+            if (i.tag === tagState) {
+              return (
+                <>
+                  <ul>
+                    <li>
+                      Title: {i.title}
+                    </li>
+                    <li>
+                      Link: {i.link}
+                    </li>
+                  </ul>
+                  <hr />
+                </>
+              )
+            }
+          })  
         }
       {/* <BookmarkList title={title} /> */}
     </>
