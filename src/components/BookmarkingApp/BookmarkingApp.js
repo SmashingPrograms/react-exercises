@@ -8,7 +8,7 @@ function BookmarkingApp() {
   const [bookmarkLink, setBookmarkLink] = useState('');
   const [bookmarkTag, setBookmarkTag] = useState('');
   const [bookmarkTags, setBookmarkTags] = useState(['All tags']);
-  const [tagState, setTagState] = useState('Loo')
+  const [tagState, setTagState] = useState('All tags')
   // setBookmark([1, 2])
 
   const tags = [];
@@ -43,6 +43,12 @@ function BookmarkingApp() {
     setBookmarkTag(e.target.value);
   }
 
+  const handleTagClick = (e) => {
+    e.preventDefault();
+    setTagState(e.target.textContent);
+    console.log(tagState)
+  }
+
   return (
     <>
       <form className="form" onSubmit={handleSubmit}>
@@ -64,7 +70,7 @@ function BookmarkingApp() {
         Tags:
         {
           bookmarkTags.map(i => (
-            <li>
+            <li onClick={handleTagClick}>
               {i}
             </li>
           ))
