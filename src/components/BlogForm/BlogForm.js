@@ -30,6 +30,7 @@ function BlogApp() {
 
   return (
     <>
+      <h1>A: Blog Form</h1>
       <form className="form" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="title">Title: </label>

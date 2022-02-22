@@ -54,6 +54,7 @@ function ContactForm() {
 
   return (
     <>
+      <h1>B: Contact Form</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="firstName">First name: </label>
         <input type="text" name="firstName" onChange={handleFirstName} value={firstName} required />

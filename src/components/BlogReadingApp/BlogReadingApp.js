@@ -23,6 +23,7 @@ function BlogReadingApp() {
 
   return (
     <>
+      <h1>C: Blog Reading App</h1>
       <div class="blogSpace">
         <ul className="blogsToRead">
           {
